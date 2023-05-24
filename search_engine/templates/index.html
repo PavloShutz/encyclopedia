@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container">
+        <div class="search-bar">
+            <form method="post" id="search-form">
+                {% csrf_token %}
+                <input type="text" class="form-control" size=20 name="swrd" />
+                <input class="btn btn-success" type="submit" value="Тлумачення" />
+            </form>
+        </div>
+        <div class="result">
+            <textarea class="form-control" readonly rows="50%" cols="100%" data-height="50%">{{ article }}</textarea>
+        </div>
+    </div>
+{% endblock %}

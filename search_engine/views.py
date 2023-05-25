@@ -1,3 +1,5 @@
+"""All views for application."""
+
 from django.shortcuts import render
 
 from .parser import render_article

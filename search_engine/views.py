@@ -13,7 +13,7 @@ def index(request):
     if request.method == "POST":
         word: str = request.POST.get("swrd")
         article = render_article(word)
-        if re.match(r'Слова «\w*» не знайдено', word) is not None:
+        if re.match(r'Слова «\w*» не знайдено', article) is None:
             save_article(word, article)
         return render(request, "index.html", context={"article": article})
     return render(
